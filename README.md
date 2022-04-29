@@ -1,5 +1,7 @@
 # project-website-template
 
+https://AndreasLH.github.io/Social_Artists/
+
 __A website template for your final project__ 🔮
 
 By using this template you would be able to create your own website and deploy it on Github Pages. This project creates a static website, to test it locally (on your machine) you need to install [Hugo](https://gohugo.io/getting-started/installing/). This facilitates you to develop it and display the changes in real-time.
