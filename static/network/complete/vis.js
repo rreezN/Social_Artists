@@ -50,7 +50,7 @@ function vis(new_controls) {
 
 
 
-  window.controls = {"zoom": 0.6754632462893047, "node_charge": -45, "node_gravity": 0.0833886275922816, "link_distance": 10.871633918820784, "link_distance_variation": 0.13, "node_collision": true, "wiggle_nodes": false, "freeze_nodes": false, "node_fill_color": "#79aaa0", "node_stroke_color": "#555555", "node_label_color": "#000000", "display_node_labels": false, "scale_node_size_by_strength": true, "node_size": 21.1428906406739, "node_stroke_width": 1.33067044941725, "node_size_variation": 0.49855796952406173, "link_color": "#7c7c7c", "link_width": 2, "link_alpha": 0.5, "link_width_variation": 0.5, "display_singleton_nodes": true, "min_link_weight_percentile": 0, "max_link_weight_percentile": 1}
+  window.controls = {"zoom": 0.67, "node_charge": -56.886245096161474, "node_gravity": 0.06682915514246715, "link_distance": 9.632157405952173, "link_distance_variation": 0.09, "node_collision": true, "wiggle_nodes": false, "freeze_nodes": false, "node_fill_color": "#79aaa0", "node_stroke_color": "#555555", "node_label_color": "#000000", "display_node_labels": false, "scale_node_size_by_strength": true, "node_size": 25.696745564372875, "node_stroke_width": 1.5790625361644666, "node_size_variation": 0.6724324302471135, "link_color": "#7c7c7c", "link_width": 2, "link_alpha": 0.5, "link_width_variation": 0.5, "display_singleton_nodes": true, "min_link_weight_percentile": 0, "max_link_weight_percentile": 1}
     
   // Overwrite default controls with inputted controls
   d3.keys(new_controls).forEach(key => {

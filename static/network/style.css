@@ -1,77 +1,88 @@
-:root {
-	--major-width: 15vw;
-	--major-height: 65.19607845vw;
-	--canvas-dim: 64.730392155vw;
-	--sidebar-width: 27.941176465vw;
-}
-
-.parent_div {
-	width: var(--major-width);
-	height: var(--major-height);
-	max-width: 138.428571415vh;
-	max-height: 95vh;
-	position: absolute;
-	margin: auto;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
-
-.child_div1 {
-	width: var(--major-height);
-	height: var(--major-height));
-	max-width: 95vh;
-	max-height: 95vh;
-	float: left;
-}
-
-.canvas_container {
-	width: var(--canvas-dim);
-	height: var(--canvas-dim);
-	max-width: 94.321428542vh;
-	max-height: 94.321428542vh;
-	border-style: solid;
-	border-color: #cacaca;
-	border-width: 2px;
-}
-
-.child_div2 {
-	width: var(--sidebar-width);
-	height: var(--major-height);
-	max-width: 40.714285702vh;
-	max-height: 95vh;
-	float: right;
-	overflow-y: scroll;
-}
-
-.controls_container {
-	width: var(--sidebar-width);
-	max-width: 40.714285702vh;
-	position: relative;
-}
-
-.child_div2_child_mid {
-	width: var(--sidebar-width);
-	max-width: 40.714285702vh;
-	height: 30px;
-}
-
-.infotext_container {
-	width: var(--sidebar-width);
-	max-width: 40.714285702vh;
-}
-
-p.sidebar-text {
-	font-family: 'Open sans', sans-serif; color: #777777; font-size: 14px;
-    hyphens: auto;
-    text-align: justify;
-}
-
-.swal2-text {
-	font-family: 'Open sans', sans-serif; color: #777777; font-size: 14px;
-}
-
-.swal2-popup {
-    font-family: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
-}
+@font-face {
+	font-family: "Computer Modern";
+	src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+  }
+  @font-face {
+	font-family: "Computer Modern";
+	src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsx.otf');
+	font-weight: bold;
+  }
+  @font-face {
+	font-family: "Computer Modern";
+	src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsi.otf');
+	font-style: italic, oblique;
+  }
+  @font-face {
+	font-family: "Computer Modern";
+	src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf');
+	font-weight: bold;
+	font-style: italic, oblique;
+  }
+  
+  body {
+	font-family: "Computer Modern", sans-serif;
+  }
+  
+  .parent_div {
+	  height: 100%;
+	  max-width: 100%;
+	  margin: auto;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+  }
+  
+  .child_div1 {
+	  width: 100%;
+	  height: 100%;
+	  margin: auto;
+  }
+  
+  .canvas_container {
+	  width: 94.321428542vh;
+	  height: 94.321428542vh;
+	  margin: auto;
+	  max-width: 94.321428542vh;
+	  max-height: 94.321428542vh;
+	  border-style: solid;
+	  border-color: #cacaca;
+	  border-width: 2px;
+  }
+  
+  .swal2-text {
+	  font-family: "Computer Modern", sans-serif; color: #777777; font-size: 14px;
+  }
+  
+  .swal2-popup {
+	  font-family: "Computer Modern", sans-serif;
+  }
+  
+  .tg {
+	  border-collapse:collapse;
+	  border-spacing:0;
+	  margin:0px auto;
+  }
+  .tg td {
+	  border-color:black;
+	  border-style:solid;
+	  border-width:1px;
+	  font-size:20px;
+		overflow:hidden;
+		padding:10px 5px;
+	  word-break:normal;
+  }
+  
+  .tg th{
+	  border-color:black;
+	  border-style:solid;
+	  border-width:1px;
+	  font-size:20px;
+		font-weight:normal;'
+		overflow:hidden;
+		padding:10px 5px;
+		word-break:normal;
+   }
+   
+  .tg .tg-cly1{text-align:left;vertical-align:middle}
+  .tg .tg-wa1i{font-weight:bold;text-align:center;vertical-align:middle}
