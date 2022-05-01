@@ -1,5 +1,4 @@
 # project-website-template
-f
 https://AndreasLH.github.io/Social_Artists/
 
 __A website template for your final project__ 🔮
