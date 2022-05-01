@@ -1,13 +1,13 @@
 baseURL = "https://AndreasLH.github.io/Social_Artists/"
 title = "Social Artists"
-description = "This is a project description"
+description = "This is a project description (not shown anywhere)"
 relativeURLs = true
 theme = "theme" 
 [params]
     authors = ["Andreas Lau Hansen s194235", "Dennis Chenxi Zhuang s194247", "Kasper Niklas Kjær Hansen s194267"]
     notebook = "/explainer-notebook.html"
-    data = "https://drive.google.com"
-    github = "https://github.com/AndeasLH/Social_Artists"
+    data = "https://github.com/AndreasLH/Social_Artists/tree/main/data"
+    github = "https://github.com/AndreasLH/Social_Artists"
     [[params.nav]]
         label = "Data"
         link = "/data-description"
