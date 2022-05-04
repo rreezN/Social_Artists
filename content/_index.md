@@ -8,16 +8,79 @@ r { color: Red }
 o { color: darkorange }
 g { color: Green }
 </style>
+_The world of music is filled with diverse people and genres. Each genre contains subcultures with its very own artists. 
+Artists who speak together, perform together and create art together. They are social artists._ 
+
+On this website, we wish to give you an insight into The Social Network of hip hop artists. This project has narrowed 
+its focus on hip hop artists because they are very social in their work, doing a lot of collaborations and having 
+relations with each other. As a result it is possible to demonstrate the strength of the tools in network science 
+while giving the reader an indeep exposition of the complex and captivating lives of hip hop artists. 
+
+To accomdate the website we have created a **Jupiter notebook** which the technical reader might enjoy, as it contains
+all the relevant analysis, which has been made in Python. In there you can find all the technical details of how 
+everything has been implemented and calculated.
 
 
-# **Hip Hop** 
+# **Hip Hop: a social-political movement** 
+Hip-Hop is a music genre loved by many due to how it reflects upon some of the struggles, thoughts and situations that 
+numerous young people are experiencing.  
+
+While most people know about the music and the lyrics, many people do not know much about the artists and social 
+relationships. However, the artists and their relationships are as equally fascinating as their lyrics and music 
+since they are the minds behind it. In this project, we analyse the musicians themselves using Wikipedia as a reference. 
+Potentially, we could also reveal a bit of insight into the music industry. And the societal development provided 
+by the people of the Hip-hop genre.
+
+
+Motivate the study of the social network of hip hop artists.
+Hip Hop artists are very social in their work. Often the authors on the tracks are listed with many featuring artists 
+and many songs are written in collaboration between multiple musicians. It is therefore interesting to model the 
+social network between the hip-hoppers. We can use the tools of network analysis to examine the social relationship 
+between hip-hoppers in terms of raw numbers. Then we can answer questions like: who are the most central people in 
+hip-hop? Who has many co-authors on their songs, or who are the co-authors to many songs? 
+Of equal interest is how the artists are described by the public via their Wikipedia pages. Even though the pages are 
+inherently neutral by design, it is still relevant to study how the sentiment of some hip-hoppers relate. We can also 
+get to know if there are certain words or topics that are more relevant for an artist than for the rest.
+For more introduction, our pitch video for this project is below:
+
+{{< youtube 412kVAbfoZg >}}
+Explanation of the website
+This website is structured with 3 subpages for each of the following types of analysis
+•	Data page
+•	Network analysis page
+•	Text analysis page
+Many of the plots on this website are created using the `plotly` library and are interactive. 
+Most of the network analysis was conducted in "`networkx` "and the visualisation is done through the "`netwulf` "package. Community detection was carried out with the python [louvain package](https://github.com/taynaud/python-louvain)
+
+The linked [explainer jupyter notebook]() (indsæt nbviewer link https://nbviewer.org/ ) contains all the relevant analysis, which has been made in python. In there you can find all the technical details of how everything has been implemented and calculated.
+hej
+
 
 
 # **Data**
-This is the data secton
+The data for this project was acquired by extracting information from the Wikipedia pages of a 
+<a href="https://en.wikipedia.org/wiki/List_of_hip_hop_musicians" target="_blank">list of hip-hop musicians</a>.
+This was done by using the
+<a href="https://docs.python-requests.org/en/latest/" target="_blank">Wikipedia Python API library</a>
+and by using the raw Wikipedia API and the request library. 
+
+We went through all the subpages from the list of hop musicians to extract information about each of the artists. 
+Following this procedure, we gathered data from approximately 2600 hip-hoppers. Hereof these six attributes were 
+queried from the first API call:
+- Title
+- Content 
+- Date of birth 
+- Genres
+- Links (URL)
+- Artist links 
+- Categories
+
+The GIF below visualises where on the artists' Wikipedia pages each of these information bits were gathered.
+<img src="https://i.imgur.com/35pX5is.gif" width="100%"/>
+
 
 # **Network analysis**
-## Directed graph
+## **Directed graph**
 To get an overview of the relationship of hip hop artists, we investigated the statistics of the network. Looking at our 
 data, the natural choice at first was to explore the structure of the directed network since it was 
 collected in a way where there naturally were directed edges from one artist to another. The directed edges are made 
@@ -25,12 +88,12 @@ simply by stating that; if there is a hyperlink from artist A's wiki page referr
 there is a directed edge going from the node representing artist A to the node representing artist B.
 
 
-## Nodes, edges and density. 
+## **Nodes, edges and density** 
 Using this practice, the artist network has 2564 nodes and 34754 edges and the density of the network, meaning the 
 number of edges divided by the possible number of nodes, is 0.0053.
 
 
-## Degree
+## **Degree**
 We will now look at how many connections, or links in network terminology, each artist has. This is done by looking at 
 each artist's node in-degrees, and out-degrees, where in-degrees are how many artists' wiki pages refer to their wiki 
 page, and their out-degrees are how many artists their wiki refer to. The distribution of the in- and out-degrees for 
@@ -73,7 +136,7 @@ inspiration or did a small collab with them. In contrast, the famous artists' as
 not have significant importance to be recognised as being noteworthy on the famous artists' wiki page.
 
 
-## Top artists by degree
+## **Top artists by degree**
 Let’s take a look at the top 10 artists with the most in- and out-degrees in the table below. | 
 
 |In Degree        |     | Out Degree       |     |
@@ -93,7 +156,7 @@ Most of these hip-hoppers, having either won a Grammy or at least been nominated
 well-known folk. As hip hop is a lot about connections and who you collaborate with, it only makes sense that 
 these people at the top of the game have made many connections throughout their careers.
 
-# Undirected
+# **Undirected**
 Using an undirected network also prompts merit as it allows for community detection. Here we wished to enable 
 communities to be found where artists have affected each other. Therefore an undirected edge will be created 
 between two artist nodes only where both artists refer to each other, i.e. the nodes are strongly connected 
@@ -116,7 +179,7 @@ This leaves the graph with the following statistics
 | Fraction   | 0.817 | 0.212 |
 
 
-## Clustering
+## **Clustering**
 We can use clustering analysis to determine if the hip-hoppers form local groups in the network with a higher density 
 than expected. We would probably expect subgroups of the hip-hoppers to work together with the same but slightly 
 different subgroups, i.e. if they work with a friend of a friend, etc. In this fashion, clusters arise in the graph.
@@ -137,7 +200,7 @@ $$\langle C \rangle_{\text{random}} = 0.00429$$
 Since the clustering coefficient for the hip-hop network is approximately 100x larger than the coefficient for the 
 random network, we conclude that clusters are indeed present.
 
-# Text
+# **Text**
 The text used for the text analysis is the content of each wiki page. There are 
 between 239 and 110.250 words written about each artist, with the median being 4202 
 words and the mean being 6944. The distribution of words is shown here:
@@ -151,7 +214,7 @@ artists differ from each other. In this investigation, we will use term
 frequency-inverse document frequency visualised with WordClouds and some sentiment 
 analysis to understand each artist better.
 
-## Preparing the text
+## **Preparing the text**
 Before working with the text, it had to be prepared and preprocessed to become a more 
 useful text that could provide better insights. Hence we made some alterations to the 
 text. First, we removed all numbers, stop words and punctuation since commas, a "5", 
@@ -162,7 +225,7 @@ be saved but not the URL in the hyperlink. Then every word was set to lower case
 finally, the text was tokenised using `nltk. tokenise` such that words with the 
 same stem were recognised as the same word
 
-## Term Frequency–Inverse Document Frequency (TF-IDF)
+## **Term Frequency–Inverse Document Frequency (TF-IDF)**
 The Term Frequency–Inverse Document Frequency (TF-IDF) is a fascinating numerical statistic when doing information 
 retrieval of some documents. As the method's name implies, there are two main ideas behind this statistic; 
 the frequency of the term in a document and how frequent documents contain the term. The equation for the 
@@ -206,7 +269,7 @@ Without going in-depth with them, we believe it might also be interesting to loo
 ### Insert Word Clouds
 ### Insert Word Clouds
 
-## Sentiment analysis
+## **Sentiment analysis**
 We wanted to do a sentiment analysis of the hip hop artists, but given that Wikipedia is notoriously neutral in their 
 writing, the results of just doing it on all their content would be uninteresting. Instead, we thought it would be 
 interesting to look at each artist's top 100 words from the TF-IDF scores. In that way, the considered words hold 
@@ -216,7 +279,7 @@ much more weight and can better describe the artist's true sentiment
 The figure above the sentiment on the y-axis and the age on the x-axis **this needs to be elaborated on to be included**
 
 
-# Communities
+# **Communities**
 Hip hop artists are of course not all alike. They rap about different topics, care about different issues and have 
 different music styles. Especially music style is something that deviates in hip hop with some artists singing 
 pop-rap others sing lofi-hiphop and then there are those who are gangster rappers. To investigate the structure of 
@@ -249,7 +312,7 @@ occurred, they were assigned randomly. If they happened to have no genres out of
 artists who have the same secondary genre are in a community with each other, which we will explore shortly. 
 
 
-## Modularity 
+## **Modularity** 
 Now we will look at the modularity of the network, which determines whether there is a significant community structure 
 in the social network of hip hop artists. In a random network, it can be expected that there are no local density 
 fluctuations, where there are groups of nodes that have more edges between them than in other places. However, these 
@@ -271,7 +334,7 @@ network configuration and then simulating it 1000 times. Here we have a histogra
 
 The simulations show that the genre partition modularity is significantly different from the random network results.
 
-# Tying the network and text together (might need other title) ¡NOT DONE!
+# **Tying the network and text together (might need other title) ¡NOT DONE!**
 What we found very interesting to do now was to combine what we found in the network analysis with the methods we used 
 in the sentiment analysis. This was done by using the TF-IDF statistic for the ??(41)?? groups and compare them to 
 each other and see if there were any apparent groupings and characteristics in their word clouds. 

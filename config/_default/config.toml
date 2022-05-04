@@ -2,3 +2,6 @@
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+custom_css = ["css/style.css"]
+custom_js = ["js/vis.js"]
