@@ -5,7 +5,7 @@ next: text-analysis
 ---
 
 <iframe align=middle id="serviceFrameSend" width="95%" height="700px" frameborder="0" scrolling="no" src="/network/complete/index.html"></iframe>
-
+hej med dig jeg hedder kaj. 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nulla tellus, tempus sed lobortis quis, venenatis ac ante. Maecenas accumsan augue ultricies metus hendrerit, in ultrices urna fringilla. Suspendisse lobortis egestas magna, sit amet fermentum ligula tincidunt vitae. Suspendisse cursus non dui a vulputate. Cras vestibulum vulputate enim eu placerat. Ut scelerisque semper justo sit amet auctor. Aliquam sit amet iaculis tortor.
 
