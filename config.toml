@@ -1,20 +1,12 @@
 baseURL = "https://AndreasLH.github.io/Social_Artists/"
-title = "Social Artists"
+title = "The Social Network of Hip Hop Artists"
 description = "This is a project description (not shown anywhere)"
 relativeURLs = true
-theme = "theme" 
+theme = "theme"
 [params]
     authors = ["Andreas Lau Hansen s194235", "Dennis Chenxi Zhuang s194247", "Kasper Niklas Kjær Hansen s194267"]
-    notebook = "/explainer-notebook.html"
-    data = "https://github.com/AndreasLH/Social_Artists/tree/main/data"
+    notebook = "https://nbviewer.org/urls/gitlab.gbar.dtu.dk/s194247/computational-social-science/raw/master/Project_Assignment/explainer_notebook.ipynb#"
+    data = "https://gitlab.gbar.dtu.dk/s194247/computational-social-science/tree/master/Project_Assignment"
     github = "https://github.com/AndreasLH/Social_Artists"
-    [[params.nav]]
-        label = "Data"
-        link = "/data-description"
-    [[params.nav]]
-        label = "Network"
-        link = "/network-analysis"
-    [[params.nav]]
-        label = "Text"
-        link = "/text-analysis"
+
 

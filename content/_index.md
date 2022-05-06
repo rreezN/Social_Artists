@@ -1,7 +1,6 @@
 ---
 title: The Social Network of Hip Hop Artists
 layout: single
-next: data-description
 ---
 
 <style>
@@ -38,7 +37,7 @@ in terms of raw numbers. Then we can answer questions like: who are the most cen
 We hope that this website will give you a bit of insight into the hip hop music industry and the sociacl relations that 
 binds it all together.
 
-The linked [explainer jupyter notebook]() (indsæt nbviewer link https://nbviewer.org/ )
+The linked [explainer jupyter notebook](https://nbviewer.org/urls/gitlab.gbar.dtu.dk/s194247/computational-social-science/raw/master/Project_Assignment/explainer_notebook.ipynb#). Or this [link](https://gitlab.gbar.dtu.dk/s194247/computational-social-science/tree/master/Project_Assignment) to play around with it.
 
 # **Data**
 The data for this project was acquired by extracting information from the Wikipedia pages of a 
