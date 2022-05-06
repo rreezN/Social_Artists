@@ -50,7 +50,7 @@ function vis(new_controls) {
 
 
 
-  window.controls = {"zoom": 0.67, "node_charge": -56.886245096161474, "node_gravity": 0.06682915514246715, "link_distance": 9.632157405952173, "link_distance_variation": 0.09, "node_collision": true, "wiggle_nodes": false, "freeze_nodes": false, "node_fill_color": "#79aaa0", "node_stroke_color": "#555555", "node_label_color": "#000000", "display_node_labels": false, "scale_node_size_by_strength": true, "node_size": 25.696745564372875, "node_stroke_width": 1.5790625361644666, "node_size_variation": 0.6724324302471135, "link_color": "#7c7c7c", "link_width": 2, "link_alpha": 0.5, "link_width_variation": 0.5, "display_singleton_nodes": true, "min_link_weight_percentile": 0, "max_link_weight_percentile": 1}
+  window.controls ={"zoom": 0.67, "node_charge": -45, "node_gravity": 0.1, "link_distance": 15, "link_distance_variation": 0, "node_collision": true, "wiggle_nodes": false, "freeze_nodes": false, "node_fill_color": "#79aaa0", "node_stroke_color": "#555555", "node_label_color": "#000000", "display_node_labels": false, "scale_node_size_by_strength": true, "node_size": 14.087653555272478, "node_stroke_width": 1, "node_size_variation": 0.25603167993085857, "link_color": "#7c7c7c", "link_width": 2, "link_alpha": 0.14146080125176144, "link_width_variation": 0.5, "display_singleton_nodes": true, "min_link_weight_percentile": 0, "max_link_weight_percentile": 1}
     
   // Overwrite default controls with inputted controls
   d3.keys(new_controls).forEach(key => {
@@ -58,7 +58,8 @@ function vis(new_controls) {
   });
 
   controls['file_path'] = "network.json";
-  //controls['file_path'] = "https://gist.githubusercontent.com/ulfaslak/6be66de1ac3288d5c1d9452570cbba5a/raw/0b9595c09b9f70a77ee05ca16d5a8b42a9130c9e/miserables.json";
+  // controls['file_path'] = "https://gist.githubusercontent.com/ulfaslak/6be66de1ac3288d5c1d9452570cbba5a/raw/0b9595c09b9f70a77ee05ca16d5a8b42a9130c9e/miserables.json";
+  // controls['file_path'] = "https://gist.githubusercontent.com/AndreasLH/5574a85f1e8f4bcf485e19adcbeaffd1/raw/fdfe00936c538493001b526f148b7b27b6a26445/karate_network.json";
 
   // Force layout
   var simulation = d3.forceSimulation()
@@ -90,22 +91,6 @@ function vis(new_controls) {
     context.globalCompositeOperation = "source-over";
     graph.nodes.forEach(drawNode);
     graph.nodes.forEach(drawText);
-
-    context.font = "18px Helvetica";
-    context.fillStyle = "#000000";
-    context.fillText("Hip-hoppers", width*0.78, height*0.04);
-    context.beginPath();
-    context.arc(width*0.76, height*0.03, 9, 0, Math.PI*2, false);
-    context.fillStyle = '#79aaa0';
-    context.fill();
-
-    context.font = "18px Helvetica";
-    context.fillStyle = "#000000";
-    context.fillText("Rappers", width*0.78, height*0.08);
-    context.beginPath();
-    context.arc(width*0.76, height*0.07, 9, 0, Math.PI*2, false);
-    context.fillStyle = "#1FD082";
-    context.fill();
   }
 
   // Restart simulation
