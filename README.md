@@ -5,9 +5,9 @@ Most of the work for this repository has been performed in [another repository](
 
 ## Quick links for everything
 
-[Explainer notebook nicely formatted](https://nbviewer.org/urls/gitlab.gbar.dtu.dk/s194247/computational-social-science/raw/master/Project_Assignment/explainer_notebook.ipynb#)
+[Explainer notebook nicely formatted and viewable through nbviewer](https://nbviewer.org/urls/gitlab.gbar.dtu.dk/s194247/computational-social-science/raw/master/Project_Assignment/explainer_notebook.ipynb#)
 
-[Explainer notebook in this repo](Project_Assignment%5Cexplainer_notebook.ipynb) 
+[Explainer notebook in this repo](https://github.com/AndreasLH/Social_Artists/blob/main/Project_Assignment/explainer_notebook.ipynb) 
 
 [Website](https://AndreasLH.github.io/Social_Artists/)
 
