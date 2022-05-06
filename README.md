@@ -1,8 +1,18 @@
 This is the website for our final project in the DTU course Computational Social Science in the spring of 2022. The website can be found [here](https://AndreasLH.github.io/Social_Artists/) or the link in the descrption.
 
 
-
 Most of the work for this repository has been performed in [another repository](https://gitlab.gbar.dtu.dk/s194247/computational-social-science/tree/master/Project_Assignment). But for convenience it is also embedded in the Project_Assignment folder. This repo is mainly just for hosting the website.
+
+## Quick links for everything
+
+[Explainer notebook nicely formatted](https://nbviewer.org/urls/gitlab.gbar.dtu.dk/s194247/computational-social-science/raw/master/Project_Assignment/explainer_notebook.ipynb#)
+
+[Explainer notebook in this repo](Project_Assignment%5Cexplainer_notebook.ipynb) 
+
+[Website](https://AndreasLH.github.io/Social_Artists/)
+
+[Data](Project_Assignment)
+
 
 ## Tech stuff 🤠
 
