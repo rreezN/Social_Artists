@@ -1,7 +1,6 @@
 ---
 title: The Social Network of Hip Hop Artists
 layout: single
-next: data-description
 ---
 
 {{< load-plotly >}}
@@ -12,35 +11,36 @@ o { color: darkorange }
 g { color: Green }
 </style>
 
-
 _The world of music is filled with diverse people and genres. Each genre contains subcultures with its very own artists. 
 Artists who speak together, perform together and create art together. They are social artists._ 
 
 On this website, we wish to give you an insight into The Social Network of hip hop artists. This project has narrowed 
 its focus on hip hop artists because they are very social in their work, doing a lot of collaborations and having 
-relations with each other. As a result it is possible to demonstrate the strength of the tools in network science 
-while giving the reader an i deep exposition of the complex and captivating relationships of hip hop artists. 
+relations with each other. As a result, it is possible to demonstrate the strength of the tools in network science 
+while giving the reader an in-depth exposition of the complex and captivating relationships of hip hop artists. 
 
-To accommodate the website we have created a <o> Jupiter notebook (see bottom)</o> which the technical reader might enjoy, as it contains
-all the relevant analysis, which has been made in Python. In there you can find all the technical details of how 
+To accommodate the website, we have created a
+<a href="https://nbviewer.org/urls/gitlab.gbar.dtu.dk/s194247/computational-social-science/raw/master/Project_Assignment/explainer_notebook.ipynb#" target="_blank">Jupiter notebook</a>
+which the technical reader might enjoy, as it contains
+all the relevant analysis, which has been made in Python. In there, you can find all the technical details of how 
 everything has been implemented and calculated.
 
-To get a sense of what website will offer, you can take a look at our project pitch which outlines the project
+To get a sense of what the website will offer, you can take a look at our project pitch which outlines the project
 {{< youtube 412kVAbfoZg >}}
 
 # **Hip Hop: a social-political movement** 
 Hip-Hop is a music genre loved by many due to how it reflects upon some of the struggles, thoughts and circumstances that 
-numerous young people are experiencing. Their ideas emerges from the state of the present and their art are fostering 
-the future. With mere words and beats youth cultures are remolded, a generation's perspectives on sociopolitical matters
-are recalibrated and the civilisation, our collective community, takes another small evolutionary step. As hip hop has 
-such a big influence on the youth, which is equated with The Future, one must recognise that hip hop is a subject of 
+numerous young people are experiencing. Their ideas emerge from the state of the present, and their art fosters 
+the future. With mere words and beats, youth cultures are remoulded, a generation's perspectives on sociopolitical matters
+are recalibrated, and the civilisation, our collective community, takes another small evolutionary step. As hip hop has 
+such a significant influence on the youth, which is equated with The Future, one must recognise that hip hop is a subject of 
 interest when studying social science.  
 
-That is why, we have chosen  to investigate the relations between the artists of hip hop using Wikipedia as a reference. 
-Wikipedia is an interesting platform because it here that the common folk expound what they creditable accomplishment 
+That is why we have chosen to investigate the relations between hip hop artists using Wikipedia as a reference. 
+Wikipedia is an interesting platform because it is here that the common folk expound on what creditable accomplishments 
 the artists have made. We can use the tools of network analysis to examine the social relationship between hip-hoppers 
-in terms of raw numbers. Then we can answer questions like: who are the most central people in hip-hop? 
-We hope that this website will give you a bit of insight into the hip hop music industry and the sociacl relations that 
+in terms of raw numbers. Then we can answer questions like who are the most central people in hip-hop? 
+We hope that this website will give you a bit of insight into the hip hop music industry and the social relations that 
 binds it all together.
 
 # **Data**
@@ -50,7 +50,7 @@ This was done by using the
 <a href="https://docs.python-requests.org/en/latest/" target="_blank">Wikipedia Python API library</a>
 and by using the raw Wikipedia API and the request library. 
 
-We went through all the subpages from the list of hop musicians to extract information about each of the artists. 
+We went through all the subpages from the list of hip hop musicians to extract information about each of the artists. 
 Following this procedure, we gathered data from approximately 2600 hip-hoppers. Hereof these six attributes were 
 queried from the first API call:
 - Title
@@ -81,7 +81,7 @@ Using the practice above, the artist network has 2564 nodes and 34754 edges and 
 number of edges divided by the possible number of nodes, is 0.0053. 
 
 
-## **Degree**
+## **Degrees: a display of popularity**
 We will now look at how many connections, or links in network terminology, each artist has. This is done by looking at 
 each artist's node in-degrees, and out-degrees, where in-degrees are how many artists' wiki pages refer to their wiki 
 page, and their out-degrees are how many artists their wiki refer to. The distribution of the in- and out-degrees for 
@@ -94,8 +94,8 @@ It should be noted that the axes are logarithmic._
 
 The figure above shows that the number of degrees for the artists rapidly decreases. The figure shows that just 10% 
 of the artists have five or more direct links to other artists. Kanye West is highlighted as an exciting person 
-since he has the most in-degrees of all the artists, meaning that he is the one being refered to the most. Note 
-that the distribution is roughly linear in the log-log scale, that means that the relation follows a power law. 
+since he has the most in-degrees of all the artists, meaning that he is the artist who is referred to the most. Note 
+that the distribution is roughly linear in the log-log scale, which means the relation follows a power law. 
 The table below shows some summary statistics on the distribution.
 
 |            | **Mean** | **Median** | **Mode** |
@@ -108,14 +108,14 @@ number of in- and outgoing links is the same.
 
 Looking at the degrees of the nodes in the network can tell quite a lot about the artist's popularity in the world 
 of hip hop. The graph below is a scatter plot in logarithmic scale that displays the in-degree and out-degree for 
-each artist. Try hovering over the points in the graph to see their names. Do you recognize any of them, and where 
+each artist. Try hovering over the points in the graph to see their names. Do you recognise any of them, and where 
 do they primarily lie in the graph?
 
 
 {{< plotly json="images/in_out_scatter_plotly.json" height="550px" >}}
 
 _The red line is an equal number of in- and out-degree. Artists who lie above this line have more people who have 
-attributed them than they have to others. You can also change the scale from log to linear, using the buttons_
+attributed them than they have to others. You can also change the scale from log to linear using the buttons_
 
 Besides being an excellent way to visualise each artist's in- and out-degrees, the scatter plot also constitutes a 
 great way to see the correlation between the in-degrees and out-degrees. Here it can be seen that for the famous 
@@ -126,7 +126,7 @@ not have significant importance to be recognised as being noteworthy on the famo
 
 
 ## **Top artists by degree**
-Let’s take a look at the top 10 artists with the most in- and out-degrees in the table below. | 
+Let’s take a look at the top 10 artists with the most in- and out-degrees in the table below.
 
 |In Degree        |     | Out Degree       |     |
 |------------------|----:|------------------|----:|
@@ -141,25 +141,31 @@ Let’s take a look at the top 10 artists with the most in- and out-degrees in t
 | Drake (musician) | 213 |        Lil Wayne |  96 |
 |   Kendrick Lamar | 188 |          50 Cent |  96 |
 
-Most of these hip-hoppers, having either won a Grammy or at least been nominated for one, and are undoubtedly 
+Most of these hip-hoppers, having either won a Grammy or at least been nominated for one, are undoubtedly 
 well-known folk. As hip hop is a lot about connections and who you collaborate with, it only makes sense that 
 these people at the top of the game have made many connections throughout their careers.
 
-# **Undirected**
+# **The undirected network**
 Using an undirected network also prompts merit as it allows for community detection. Here we wished to enable 
-communities to be found where artists have affected each other. Therefore an undirected edge will be created 
+communities to be found where artists have affected each other. Therefore, an undirected edge will be created 
 between two artist nodes only where both artists refer to each other, i.e. the nodes are strongly connected 
-components. So only if artist A’s wiki page refers to artist B’s wiki page and artist B’s wiki page refers to 
-artist A’s wiki page there will be an undirected edge between the nodes representing artist A and artist B.
+components. So only if artist A's wiki page refers to artist B's wiki page and artist B's wiki page refers to 
+artist A's wiki page, there will be an undirected edge between the nodes representing artist A and B. 
 
-When doing this, the graph lost 18% of its nodes since these artist nodes were not strongly connected components 
+Furthermore, we decided to remove all singletons and self-loops in the undirected graph, as they proposed little to no 
+useful information to our network analysis. Isolates/singletons share no information with other artists. One could 
+argue that it would be interesting to look at the singletons if the case were to look at all connections; however, 
+since links between artists say more about how much they interact and feature in each other's music, we have decided 
+to remove all the isolates.
+
+The graph lost 18% of its nodes when doing this since these artist nodes were not strongly connected components 
 and, therefore, not really in a community. Furthermore, doing this, the graph lost 79% of its edges. As observed 
 earlier, when looking at degrees, this is primarily because many smaller artists often have references to famous 
 artists since they have been an inspiration or did a small collab together. In contrast, famous artists are not 
-as affected by that small interaction. Hence the small artist did not have significant importance to be recognised 
-as being in the famous artist's social circle. 
+as affected by that small interaction. Hence the small artists did not have significant importance to be recognised 
+as being in the famous artists' social circle. 
 
-This leaves the graph with the following statistics
+This leaves the graph with the following statistics.
 
 |            | Nodes | Edges |
 |------------|------:|-------|
@@ -167,8 +173,8 @@ This leaves the graph with the following statistics
 | Undirected |  2094 | 7363  |
 | Fraction   | 0.817 | 0.212 |
 
-## **Clustering**
-To get a sense of the network we investigated the clustering of artists in groups. 
+## **Clustering coefficient**
+To get a sense of the network, we investigated the clustering of artists in groups. 
 We can use clustering analysis to determine if the hip-hoppers form local groups in the network with a higher density 
 than expected. We would probably expect subgroups of the hip-hoppers to work together with the same but slightly 
 different subgroups, i.e. if they work with a friend of a friend, etc. In this fashion, clusters arise in the graph.
@@ -189,31 +195,33 @@ $$\langle C \rangle_{\text{random}} = 0.00429$$
 Since the clustering coefficient for the hip-hop network is approximately 100x larger than the coefficient for the 
 random network, we conclude that clusters are indeed present.
 
-This primes us to believe that we can discover interesting relations between the artists, which will be useful when
-finding hip hop communities later. But first lets dive into the text analysis of the artists.  
-
-## **Assortativity text**
-The assortativity and disassortivity of a network is the tendency of a network to be divided into hubs where each of 
-the hubs can be connected to each other if it is assortative. Otherwise it is the case that the hubs avoid linking to 
-each other but instead link to other small degree nodes there is disatortivity.
+### **Assortativity and Disassortativity**
+To get an understanding of the tendencies of the relations in the network, we investigated the assortativity and 
+disassortativity of the network.
+The assortativity and disassortativity measure of a network is the inclination of a network to be divided into hubs where each of 
+the hubs are connected to each other if it is assortative. Otherwise, if it is the case that the hubs avoid linking to 
+each other but instead link to other small degree nodes, then there is disassortativity.
 
 The 
 <a href="https://en.wikipedia.org/wiki/Assortativity" target="_blank">assortativity coefficient</a>.
 can be calculated as
 $$r=\frac{\sum_{jk}kj(e_{jk}-q_jq_k)}{\sigma^2_q}$$
-where \\(r\in[-1,1]\\)); \\(q_k\\) is the distribution of the remaining degree i.e. the edges leaving the node that do not 
-connect the pair, it is expressed in terms of the degree distribution $p_k$ as shown further above; \\(\sigma_q\\) is the 
-distribution of \\(q_k\\); \((e_{jk}\)) is the joint probability distribution of the remaining degrees of the two vertices _j_ 
+where \\(r\in[-1,1]\\); \\(q_k\\) is the distribution of the remaining degree i.e. the edges leaving the node that do not 
+connect the pair, it is expressed in terms of the degree distribution \((p_k\)) as shown further above; \\(\sigma_q\\) is the 
+distribution of \\(q_k\\); \\(e_{jk}\\) is the joint probability distribution of the remaining degrees of the two vertices _j_ 
 and _k_ i.e. the fraction of edges connecting nodes of degree _j_ and _k_.
 
 For our graph we get an assortativity coefficient 
 $$r=0.357$$
-This means that the hip-hop network is structured in such a way that the people who are “hubs” tend to connect to each other. 
-This means that for instance the popular hip-hop hoppers tend to connect with other popular hip-hoppers who are also hubs. 
+This means that the hip-hop network is structured in such a way that the people who are “hubs”, meaning they are popular
+in the network, tend to connect to each other. 
+This means that, for instance, the popular hip-hop hoppers tend to connect with other popular hip-hoppers who are also hubs. 
 In this fashion, many of the groups only have sparse connections between them through the hubs.
 
+These findings prime us to believe that we can discover interesting relations between the artists, which will be useful 
+when investigating hip hop communities later. But first, let us dive into the text analysis of the artists. 
 
-# **Text**
+# **Text: analysing artists' Wiki pages**
 Even though the pages of Wikipedia are inherently neutral by design, it is still relevant to study how the sentiment 
 and wording of some hip-hoppers relate.
 
@@ -236,13 +244,13 @@ and non-essential words, such as "the" and "that", did not provide information a
 the intriguing life of the artists. Then we removed URLs, but not the text in the 
 hyperlink. So if there were a hyperlink with the text "Tupac", the text "Tupac" would 
 be saved but not the URL in the hyperlink. Then every word was set to lower case, and 
-finally, the text was tokenised using `nltk. tokenise` such that words with the 
+finally, the text was tokenised using `nltk.tokenize` such that words with the 
 same stem were recognised as the same word.
 
 After preparing the text the distribution of words have changed to this. 
 <img src="images/distribution_document_length_after.png" width="100%">
 
-It can be noticed that the amount of words in the articles on the x-axis has be reduced 10-fold, as it now only conatins
+It can be noticed that the amount of words in the articles on the x-axis has been reduced 10-fold, as it now only contains
 words which are relevant for our study. The change can be seen in the table below.
 
 |         | Mean | Median | Maximum | Minimum |
@@ -261,13 +269,13 @@ Where \\(f_{t,d}\\) is the number of times the term \\(t\\) appears in the docum
 ratio of the use of a word compared to all words in the document. 
 
 The Inverse Document Frequency (IDF) has the equation:
-$$\text{IDF}(t,d)=\log \left(\frac{N}{|\{ d\in D: t\in d\}|}\\right)$$
-Where it becomes apparent, the terms which will get the highest score are the terms where only a few documents contain
-that term, and the document has many instances of that term. 
+$$\text{IDF}(t,d)=\log \left(\frac{N}{|\{ d\in D: t\in d\}|}\\right)$$,
+where it becomes apparent that the terms which will get the highest score are the terms where only a few documents contain
+that term and the document has many instances of that term. 
 
 Thereby this statistic can find the words that make a document (Wikipedia page) unique, and that is exactly what we 
 wish to figure out. We want to find the defining words for each of our hip hop artists; the words that are unique to 
-them and, therefore likely informative about their lives. 
+them and, therefore, likely informative about their lives. 
 
 Let us start by looking at the TF and TF-IDF scores for Drake.
 
@@ -295,11 +303,9 @@ Let us start by looking at the TF and TF-IDF scores for Drake.
 
 </td></tr> </table>
 
-
-
 Unsurprisingly, Drake himself shows up as the top word in each case. However, the TF-score words are extremely 
 irrelevant since they are just generic music terms that provide absolutely no information on him as a person. 
-In contrast, the TF-IDF words are highly relevant. For example, the OVO music label which Drake owns, is shown.
+In contrast, the TF-IDF words are highly relevant. For example, Toronto the city where Drake _Graham_ is from, is shown.
 
 We believe it would be interesting for the reader to look at these hip hop artists' word clouds.
 
@@ -326,11 +332,11 @@ TF-IDF score is used to visualise and find the unique words for each artist.
 Take, for instance, Drake. In his word cloud, we see words that specifically describe him, e.g. OVO (a record label 
 founded by Drake in 2012), Canadian and Toronto, billboard, etc. All these words are related to where he is from, 
 what he does, and the fact that he has won multiple billboard rewards. Words such as lawsuit are also prominent for Drake, 
-relating to some of the controversies and legal issues. 
+relating to some of his controversies and legal issues. 
 
 The same is evident for artists such as Kanye West, where we see Kardashian relating to his ex-wife, Rocawear for Jay-Z 
 relating to a 
-<a href="https://www.thesportsman.com/style/how-jay-z-built-rocawear-the-hip-hop-fashion-line-worth-more-than-half-a-billion" target="_blank">hip hop fashion line worth more than half a billion dollars</a>.
+<a href="https://www.thesportsman.com/style/how-jay-z-built-rocawear-the-hip-hop-fashion-line-worth-more-than-half-a-billion" target="_blank">hip hop fashion line worth more than half a billion dollars</a>
 he founded. Especially interesting is Dr. Dre, an old-school hip hop producer and rapper. His word cloud is filled with 
 the names of other artists such as Eminem, 50 Cent, Snoop Dogg, Ice Cube and more, where most of them relate to back 
 when he produced music under the record labels Deathrow and Aftermath Entertainment etc.
@@ -339,21 +345,22 @@ when he produced music under the record labels Deathrow and Aftermath Entertainm
 We wanted to do a sentiment analysis of the hip hop artists, but given that Wikipedia is notoriously neutral in their 
 writing, the results of just doing it on all their content would be uninteresting. Instead, we thought it would be 
 interesting to look at each artist's top 100 words from the TF-IDF scores. In that way, the considered words hold 
-much more weight and can better describe the artist's true sentiment.
+much more weight and can better describe the artist's true sentiment. Here we show the distribution of the sentiment
+score. 
 
 {{< plotly json="images/dist_of_happiness_score.json" height="550px" >}}
 
-It can be seen that the around the average sentiment which is due to inherently neutral. They all have a sentiment score 
-above 5, which is neutral, but only slightly deviates from that. 
-Nevertheless, we will now try  and look deeper at the two ends of this spectrum of sentiment and create word clouds for 2 artists.
+It can be seen that the average sentiment score is about 5, which is due to the inherently neutral nature of Wikipedia encyclopedia language. 
+They all have a sentiment score above 5, which is neutral but only slightly deviates from that. 
+Nevertheless, we will now try and look deeper at the two ends of this spectrum of sentiment and create word clouds for two artists.
 
 
 |                   Corey Jackson                   |                   C-murder                   |
 |:-------------------------------------------------:|:--------------------------------------------:|
 | <img src="images/Corey_Jackson.png" width="100%"> | <img src="images/C-murder.png" width="100%"> |
 
-In the two word clouds above, two artists who belong to the two extremes in terms of sentiment score, 
-respectively. Try to see whether you can figure out which one has the most negative score. The first thing 
+In the two word clouds above are two artists who belong to the two extremes in terms of sentiment score. Try to see 
+whether you can figure out which one has the most negative score. The first thing 
 that comes to one's attention when looking at the word clouds is how different the words are in each word cloud. 
 These words lead Corey Jackson to have a sentiment score of 6.31 and C-Murder a sentiment score of 5.16.
 
@@ -361,24 +368,30 @@ Corey Jackson uses words that often are categorised as inspirational, e.g. motiv
 whereas C-Murder's word cloud includes words such as convict, trial, deadlock, death victim etc. Where one uses positively 
 connotated words, the other has words used in the context of criminals.
 
-In addition, we explored how the sentiment used to describe artists differ for atists at different ages. This can be seen
-in the plot underneath. 
+In addition, we explored how the sentiment used to describe artists differ for artists of different ages. 
+This can be seen in the plots underneath. 
 
 {{< plotly json="images/age_scatter_plotly.json" height="550px" >}}
 
-This show that there are 0.23 pearson correlation between the sentiment and the age. That hints that there is a weak
-positive correlation, where younger artists tend to be looked upon as a tad more positive. That might just be
-because younger artists have not yet made the controversies that many older hip hop artist have.
+<img src="images/birth_age.png" width="100%">
 
+The figure above shows a scatter plot and a boxplot for each birth year to sentiment score. 
+There is a 0.23 Pearson correlation between the sentiment and the age. That hints that there is a weak
+positive correlation, where younger artists tend to be looked upon as a tad more positive as it seems to be a very slight upwards 
+trend with wiki pages about artists before 1980 having lower happiness_scores. 
+That might just be because younger artists have not yet made the controversies that many older hip hop artists have.
+So, although there seems to be a 
+slight trend, it does not seem to be that prominent - also accounting for the limited data we have. Drawing further 
+conclusions about the evolution of formal language, and thereby sentiment score, on Wikipedia can't be made solely on 
+the data from this project.
 
 # **Communities: finding relations in the network**
-Hip hop artists are of course not all alike. They rap about different topics, care about different issues and have 
-different music styles. Especially music style is something that deviates in hip hop with some artists singing 
-pop-rap others sing lofi-hiphop and then there are those who are gangster rappers. It has already been evident that 
-there are forms of clusterings between the artists from the preliminary study of the data.
-To investigate the structure of the network we created communities based on the hip-hop artists “other genres”.
-A lot of the artists are not only singing the genre hip hop, but have several other genres they perform in, which can be seen here. 
-By using a Wikipedia site with lists of music genres and styles, it was possible to give each subgenre one of the 14 general genres. 
+Hip hop artists are, of course, not all alike. They rap about different topics, care about various issues and have 
+diverse music styles. Especially music style deviates in hip hop with some artists singing 
+pop-rap, others singing lofi-hip-hop, and then some are gangster rappers. From the preliminary study of the data, it is evident that there are forms of clusterings between the artists.
+To investigate the structure of the network, we created communities based on the hip-hop artists' "other genres".
+A lot of the artists are not only singing the genre of hip hop but have several other genres they perform in, which can be seen here. 
+Using a Wikipedia site with lists of music genres and styles made it possible to give each subgenre one of the 14 general genres. 
 
 The 14 genres are:
 1. Art (classical)
@@ -398,13 +411,13 @@ The 14 genres are:
 (We need to visualise this) 
 
 Then we counted the occurrences of each sub-genre. As these artists are hip-hoppers, it was no surprise that their 
-subgenres often were under the general genre of hip hop; however, we are interested in their main secondary genre. 
+subgenres often were under the general genre of hip hop; however, we are interested in their secondary genre. 
 So the genre which got the most counts besides hip hop was then given to the artist as a new node attribute - if a tie 
 occurred, they were assigned randomly. If they happened to have no genres out of the hip hop domain, they were given 
-“pure hip hop” as a secondary genre, as these artists indeed were pure hip-hoppers. We will now consider that the 
+"pure hip hop" as a secondary genre, as these artists indeed were pure hip-hoppers. We will now consider that the 
 artists who have the same secondary genre are in a community with each other, which we will explore shortly. 
 
-The result of this created the communities with the follow amount of members
+The result of this created the communities with the following amount of members.
 
 | **Subgenre**                 | **Count** |
 |------------------------------|----------:|
@@ -427,9 +440,9 @@ The result of this created the communities with the follow amount of members
 Now we will look at the modularity of the network, which determines whether there is a significant community structure 
 in the social network of hip hop artists. In a random network, it can be expected that there are no local density 
 fluctuations, where there are groups of nodes that have more edges between them than in other places. However, these 
-local densities can definitely be expected in a real social network! This is simply due to the fact that if two people 
+local densities can definitely be expected in a real social network! This is simply because if two people 
 know each other, they are likely to know more of the same people, just as you and a close friend are more likely to 
-have mutual acquaintances than you are a total stranger. The modularity is thereby a value that tells the strength of 
+have mutual acquaintances than you are with a total stranger. The modularity is thereby a value that tells the strength of 
 the community structures for the network, which then should be compared to a random configuration of the graph to 
 examine whether the modularity is significant. 
 
@@ -439,34 +452,32 @@ algorithm that partitions the nodes in communities that are favourable for getti
 
 Let us take a look at the network graphs that encapsulates these communities. 
 
-<o> Figure of genre partitioning with a modularity of 0.1379
+<o> Figure of genre partitioning with a modularity of 0.1379 </o>
 
-### (To insert "iframe..." code make < > around it)
-### We also need to write what the modularity is!!!! 
+<iframe align=middle id="serviceFrameSend" width="95%" height="700px" frameborder="0" scrolling="no" src="/network/secondary/index.html"></iframe>
 
-iframe align=middle id="serviceFrameSend" width="95%" height="700px" frameborder="0" scrolling="no" src="/network/secondary/index.html"></iframe
+<o> Figure of Louvain partitioning with a modularity of 0.6008 </o>
 
-<o> Figure of Louvain partitioning with a modularity of 0.6008
-
-iframe align=middle id="serviceFrameSend" width="95%" height="700px" frameborder="0" scrolling="no" src="/network/community/index.html"></iframe
+<iframe align=middle id="serviceFrameSend" width="95%" height="700px" frameborder="0" scrolling="no" src="/network/community/index.html"></iframe>
 
 The communities found by the Louvain algorithm provide a different way to partition the network compared to the 
-partitioning given by the subgenres initially offered. In some ways, the community partition makes more sense, hence 
-it has a higher modularity, which likely is due to that  hip hop artists tend to have relations with not only those with 
-the same subgenres of music but rather those who have the same viewpoints as themselves. 
-We can observe one large cluster in the middle, and there are also 
-many medium-sized closeness at least groups communities halfway to the edge in the graph, which is how you might expect 
-a community to arise. We will investigate these communities soon.
+partitioning given by the subgenres initially offered. In some ways, the community partition makes more sense; hence, 
+it has higher modularity, which likely is because hip hop artists tend to have relations with not only those with the 
+same subgenres of music but also those who have the same viewpoints as themselves.
+We can observe one large cluster in the middle and additionally a bunch of clusters with medium-sized closeness -  
+groups/communities halfway to the edge of the graph, which is how you might expect a community to arise. We will 
+investigate these communities soon.
 
 We can measure whether the modularity when using the genre partitioning is significant by comparing it to a random 
 network configuration and then simulating it 1000 times. Here we have a histogram of the results of these simulations.
 
 <img src="images/modularity_experiment.png" width="100%">
 
-The simulations show that the genre partition modularity is significantly different from the random network results.
-This means that there are definitely 
+The simulations show that the genre partition modularity differs significantly from the random network results.
+This means that there is definitely some merit to the genre partitioning, but as discussed the Louvain algorithm finds more
+relevant communities. 
 
-# **Tying the network and text together (might need other title) ¡NOT DONE!**
+# **Investigating network communities**
 What we deemed very interesting to do now was to explore the communities found using the Louvain partitioning—combining 
 the insights gained from the network analysis with the text analysis methods made this possible. We created a document 
 for each of the 61 Louvain communities we found, prepared the text, and used TF-IDF to get their unique terms. We now 
@@ -481,7 +492,7 @@ Let us first look at one of the most significant communities, which we call the 
 This community consists of  many famous artists, which can be seen in the word cloud, with artists such as Kanye "West", 
 "Eminem", Kid "Cudi" and "Drake". 
 It is, therefore, no coincidence that some of the words in their TF-IDF word cloud are "grammy", "billboard", 
-and "awards" because these artists are often receivers and are familiar with such first-class honours. The observation 
+and "awards" because these artists are often receivers and are familiar with such honours. The observation 
 that the famous artists form a group goes perfectly in line with what we saw with the Assortativity and Disassortativity 
 investigation, where it became clear that there was a tendency toward more prominent artists working together.
 
@@ -491,8 +502,8 @@ Another exciting community to look at was one we classified to be the community 
 
 This community has several threads to locations in "Africa" such as "Nigeria", "Lagos and "ghana". However, we also see 
 "British" tendencies with words such as "UK" and the music genre "grime" which emerged in London. Of course, what binds 
-these entities together is the artist in the community. The word "KSI" refers to the British YouTuber and newly hip hop 
-artist with Nigerian roots, and "Davido" is one of the biggest artists from Nigeria. Along with other artists in the 
+these entities together are the artists in the community. The word "KSI" refers to the British YouTuber and newly hip hop 
+artist with Nigerian roots, and "Davido" is one of the most prominent artists from Nigeria. Along with other artists in the 
 community, "Dizzie" and. "Stormzy" sings grime music, hinting that genre has an influence; however, it does not seem 
 to be the main driver.
 
@@ -502,9 +513,8 @@ Now it is your turn to be the social scientist! What do you think ties the artis
 
 <img src="images/clown.png" width="100%">
 
-# **Conclusion stuff** 
-
-So bla bla bla 
-
-
-
+# **Let's (w)rap this up** 
+Throughout this website, you have been exposed to various network theories and natural language processing 
+tools while getting informed about the world of hip hop. These theories and tools assisted our dive into hip hop 
+communities and helped us to get familiarised with some of the biggest hip hop stars. 
+We hope you enjoyed getting an insight into The Social Network of Hip Hop Artists! 
