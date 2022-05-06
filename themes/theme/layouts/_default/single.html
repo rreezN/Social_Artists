@@ -18,7 +18,7 @@
             <div class="font-sans flex justify-between content-center px-4 pb-12">
                 <div class="text-left">
                     {{ if isset .Params "prev" }}
-                    <p><a href="{{ if eq .Params.prev "/" }}{{ .Site.BaseURL }}{{ else }}/{{ .Params.prev }}{{end}}"
+                    <p><a href="{{ if eq .Params.prev ">/" }}{{ .Site.BaseURL }}{{ else }}/{{ .Params.prev }}{{end}}"
                             class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">&lt;
                             Previous Page</a></p>
                     {{ end }}

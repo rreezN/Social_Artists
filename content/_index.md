@@ -3,59 +3,42 @@ title: The Social Network of Hip Hop Artists
 layout: single
 next: data-description
 ---
+
 <style>
 r { color: Red }
 o { color: darkorange }
 g { color: Green }
 </style>
+
 _The world of music is filled with diverse people and genres. Each genre contains subcultures with its very own artists. 
 Artists who speak together, perform together and create art together. They are social artists._ 
 
 On this website, we wish to give you an insight into The Social Network of hip hop artists. This project has narrowed 
 its focus on hip hop artists because they are very social in their work, doing a lot of collaborations and having 
 relations with each other. As a result it is possible to demonstrate the strength of the tools in network science 
-while giving the reader an indeep exposition of the complex and captivating lives of hip hop artists. 
+while giving the reader an i deep exposition of the complex and captivating relationships of hip hop artists. 
 
-To accomdate the website we have created a **Jupiter notebook** which the technical reader might enjoy, as it contains
+To accommodate the website we have created a **Jupiter notebook** which the technical reader might enjoy, as it contains
 all the relevant analysis, which has been made in Python. In there you can find all the technical details of how 
 everything has been implemented and calculated.
 
 
 # **Hip Hop: a social-political movement** 
-Hip-Hop is a music genre loved by many due to how it reflects upon some of the struggles, thoughts and situations that 
-numerous young people are experiencing.  
+Hip-Hop is a music genre loved by many due to how it reflects upon some of the struggles, thoughts and circumstances that 
+numerous young people are experiencing. Their ideas emerges from the state of the present and their art are fostering 
+the future. With mere words and beats youth cultures are remolded, a generation's perspectives on sociopolitical matters
+are recalibrated and the civilisation, our collective community, takes another small evolutionary step. As hip hop has 
+such a big influence on the youth, which is equated with The Future, one must recognise that hip hop is a subject of 
+interest when studying social science.  
 
-While most people know about the music and the lyrics, many people do not know much about the artists and social 
-relationships. However, the artists and their relationships are as equally fascinating as their lyrics and music 
-since they are the minds behind it. In this project, we analyse the musicians themselves using Wikipedia as a reference. 
-Potentially, we could also reveal a bit of insight into the music industry. And the societal development provided 
-by the people of the Hip-hop genre.
+That is why, we have chosen  to investigate the relations between the artists of hip hop using Wikipedia as a reference. 
+Wikipedia is an interesting platform because it here that the common folk expound what they creditable accomplishment 
+the artists have made. We can use the tools of network analysis to examine the social relationship between hip-hoppers 
+in terms of raw numbers. Then we can answer questions like: who are the most central people in hip-hop? 
+We hope that this website will give you a bit of insight into the hip hop music industry and the sociacl relations that 
+binds it all together.
 
-
-Motivate the study of the social network of hip hop artists.
-Hip Hop artists are very social in their work. Often the authors on the tracks are listed with many featuring artists 
-and many songs are written in collaboration between multiple musicians. It is therefore interesting to model the 
-social network between the hip-hoppers. We can use the tools of network analysis to examine the social relationship 
-between hip-hoppers in terms of raw numbers. Then we can answer questions like: who are the most central people in 
-hip-hop? Who has many co-authors on their songs, or who are the co-authors to many songs? 
-Of equal interest is how the artists are described by the public via their Wikipedia pages. Even though the pages are 
-inherently neutral by design, it is still relevant to study how the sentiment of some hip-hoppers relate. We can also 
-get to know if there are certain words or topics that are more relevant for an artist than for the rest.
-For more introduction, our pitch video for this project is below:
-
-{{< youtube 412kVAbfoZg >}}
-Explanation of the website
-This website is structured with 3 subpages for each of the following types of analysis
-•	Data page
-•	Network analysis page
-•	Text analysis page
-Many of the plots on this website are created using the `plotly` library and are interactive. 
-Most of the network analysis was conducted in "`networkx` "and the visualisation is done through the "`netwulf` "package. Community detection was carried out with the python [louvain package](https://github.com/taynaud/python-louvain)
-
-The linked [explainer jupyter notebook]() (indsæt nbviewer link https://nbviewer.org/ ) contains all the relevant analysis, which has been made in python. In there you can find all the technical details of how everything has been implemented and calculated.
-hej
-
-
+The linked [explainer jupyter notebook]() (indsæt nbviewer link https://nbviewer.org/ )
 
 # **Data**
 The data for this project was acquired by extracting information from the Wikipedia pages of a 
@@ -201,6 +184,9 @@ Since the clustering coefficient for the hip-hop network is approximately 100x l
 random network, we conclude that clusters are indeed present.
 
 # **Text**
+Even though the pages of Wikipedia are inherently neutral by design, it is still relevant to study how the sentiment 
+and wording of some hip-hoppers relate.
+
 The text used for the text analysis is the content of each wiki page. There are 
 between 239 and 110.250 words written about each artist, with the median being 4202 
 words and the mean being 6944. The distribution of words is shown here:
@@ -245,21 +231,31 @@ them and, therefore likely informative about their lives.
 
 Let us start by looking at the TF and TF-IDF scores for Drake.
 
-|    | Word     |   TF score |
-|---:|:---------|-----------:|
-|  0 | drake    |  0.0424568 |
-|  1 | album    |  0.012454  |
-|  2 | music    |  0.0106142 |
-|  3 | also     |  0.0106142 |
-|  4 | released |  0.0100481 |
+<table>
+<tr><th>TF result</th><th>TF-IDF result</th></tr>
+<tr><td>
 
-|    | Word    |   TF-IDF score |
-|---:|:--------|---------------:|
-|  0 | drake   |     0.0433637  |
-|  1 | toronto |     0.00681557 |
-|  2 | ovo     |     0.00437314 |
-|  3 | graham  |     0.00330544 |
-|  4 | hot     |     0.00316553 |
+|    | Word     | TF score |
+|---:|:---------|---------:|
+|  0 | drake    |   0.0425 |
+|  1 | album    |   0.0125 |
+|  2 | music    |   0.0106 |
+|  3 | also     |   0.0106 |
+|  4 | released |   0.0100 |
+
+</td><td>
+
+|    | Word    | TF-IDF score |
+|---:|:--------|-------------:|
+|  0 | drake   |       0.0434 |
+|  1 | toronto |       0.0068 |
+|  2 | ovo     |       0.0044 |
+|  3 | graham  |       0.0033 |
+|  4 | hot     |       0.0032 |
+
+</td></tr> </table>
+
+
 
 Unsurprisingly, Drake himself shows up as the top word in each case. However, the TF-score words are extremely 
 irrelevant since they are just generic music terms that provide absolutely no information on him as a person. 
