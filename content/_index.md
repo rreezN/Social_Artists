@@ -1,6 +1,7 @@
 ---
 title: The Social Network of Hip Hop Artists
 layout: single
+next: data-description
 ---
 
 {{< load-plotly >}}
@@ -20,7 +21,7 @@ its focus on hip hop artists because they are very social in their work, doing a
 relations with each other. As a result it is possible to demonstrate the strength of the tools in network science 
 while giving the reader an i deep exposition of the complex and captivating relationships of hip hop artists. 
 
-To accommodate the website we have created a <o> Jupiter notebook </o> which the technical reader might enjoy, as it contains
+To accommodate the website we have created a <o> Jupiter notebook (see bottom)</o> which the technical reader might enjoy, as it contains
 all the relevant analysis, which has been made in Python. In there you can find all the technical details of how 
 everything has been implemented and calculated.
 
@@ -41,8 +42,6 @@ the artists have made. We can use the tools of network analysis to examine the s
 in terms of raw numbers. Then we can answer questions like: who are the most central people in hip-hop? 
 We hope that this website will give you a bit of insight into the hip hop music industry and the sociacl relations that 
 binds it all together.
-
-The linked [explainer jupyter notebook](https://nbviewer.org/urls/gitlab.gbar.dtu.dk/s194247/computational-social-science/raw/master/Project_Assignment/explainer_notebook.ipynb#). Or this [link](https://gitlab.gbar.dtu.dk/s194247/computational-social-science/tree/master/Project_Assignment) to play around with it.
 
 # **Data**
 The data for this project was acquired by extracting information from the Wikipedia pages of a 
@@ -198,20 +197,17 @@ The assortativity and disassortivity of a network is the tendency of a network t
 the hubs can be connected to each other if it is assortative. Otherwise it is the case that the hubs avoid linking to 
 each other but instead link to other small degree nodes there is disatortivity.
 
-The assortativity [coefficient](https://en.wikipedia.org/wiki/Assortativity) can be calculated as 
-
+The 
+<a href="https://en.wikipedia.org/wiki/Assortativity" target="_blank">assortativity coefficient</a>.
+can be calculated as
 $$r=\frac{\sum_{jk}kj(e_{jk}-q_jq_k)}{\sigma^2_q}$$
-
-(eq. 24) in _Mixing patterns in networks, M. E. J. Newman (2003)_
-
-where \\(r\in[-1,1]\\); \\(q_k\\) is the distribution of the remaining degree i.e. the edges leaving the node that do not 
+where \\(r\in[-1,1]\\)); \\(q_k\\) is the distribution of the remaining degree i.e. the edges leaving the node that do not 
 connect the pair, it is expressed in terms of the degree distribution $p_k$ as shown further above; \\(\sigma_q\\) is the 
-distribution of \\(q_k\\); \\(e_{jk}\\) is the joint probability distribution of the remaining degrees of the two vertices _j_ 
+distribution of \\(q_k\\); \((e_{jk}\)) is the joint probability distribution of the remaining degrees of the two vertices _j_ 
 and _k_ i.e. the fraction of edges connecting nodes of degree _j_ and _k_.
 
 For our graph we get an assortativity coefficient 
 $$r=0.357$$
-
 This means that the hip-hop network is structured in such a way that the people who are “hubs” tend to connect to each other. 
 This means that for instance the popular hip-hop hoppers tend to connect with other popular hip-hoppers who are also hubs. 
 In this fashion, many of the groups only have sparse connections between them through the hubs.
@@ -471,25 +467,44 @@ The simulations show that the genre partition modularity is significantly differ
 This means that there are definitely 
 
 # **Tying the network and text together (might need other title) ¡NOT DONE!**
-What we found very interesting to do now was to combine what we found in the network analysis with the methods we used 
-in the sentiment analysis. This was done by using the TF-IDF statistic for the communities found using the Louvain partitioning
-and explore what ties these communities together. This will give us an insight that the social network of hip hop artists
-consists of many g 
+What we deemed very interesting to do now was to explore the communities found using the Louvain partitioning—combining 
+the insights gained from the network analysis with the text analysis methods made this possible. We created a document 
+for each of the 61 Louvain communities we found, prepared the text, and used TF-IDF to get their unique terms. We now 
+had the most relevant and unique words for each community, so the TF-IDF word clouds gave a good impression of what the 
+communities revolved around. This made it possible for us to acquaint ourselves with why the communities were assembled 
+as they were and how artists formed social groups. 
 
-Wordclouds for the communities found by the louvain algorithm
+Let us first look at one of the most significant communities, which we call the famous club. 
 
-(This needs to be be written)...
+<img src="images/billboard.png" width="100%">
+
+This community consists of  many famous artists, which can be seen in the word cloud, with artists such as Kanye "West", 
+"Eminem", Kid "Cudi" and "Drake". 
+It is, therefore, no coincidence that some of the words in their TF-IDF word cloud are "grammy", "billboard", 
+and "awards" because these artists are often receivers and are familiar with such first-class honours. The observation 
+that the famous artists form a group goes perfectly in line with what we saw with the Assortativity and Disassortativity 
+investigation, where it became clear that there was a tendency toward more prominent artists working together.
+
+Another exciting community to look at was one we classified to be the community for UK artists with African origins. 
+
+<img src="images/UK.png" width="100%">
+
+This community has several threads to locations in "Africa" such as "Nigeria", "Lagos and "ghana". However, we also see 
+"British" tendencies with words such as "UK" and the music genre "grime" which emerged in London. Of course, what binds 
+these entities together is the artist in the community. The word "KSI" refers to the British YouTuber and newly hip hop 
+artist with Nigerian roots, and "Davido" is one of the biggest artists from Nigeria. Along with other artists in the 
+community, "Dizzie" and. "Stormzy" sings grime music, hinting that genre has an influence; however, it does not seem 
+to be the main driver.
+
+Now it is your turn to be the social scientist! What do you think ties the artists together in the communities below?
+
+<img src="images/korea.png" width="100%">
+
+<img src="images/clown.png" width="100%">
+
+# **Conclusion stuff** 
+
+So bla bla bla 
 
 
-Community 4:
-The top artist community. 
-- Kanye West, Drake, Eminem, billboard, grammy, award, mtv, tour 
 
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0wwPcA6wtMf6HUMpIRdeP7?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-
-
-Community 3:
-It is a community which has focus on it's African origins. UK artists with african roots. 
-- Africa, nigeria, uk, grime, KSI, ghana, lagos 
-
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/04QTmCTsaVjcGaoxj8rSjE?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
