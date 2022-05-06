@@ -204,9 +204,9 @@ $$r=\frac{\sum_{jk}kj(e_{jk}-q_jq_k)}{\sigma^2_q}$$
 
 (eq. 24) in _Mixing patterns in networks, M. E. J. Newman (2003)_
 
-where \((r\in[-1,1]\)); \((q_k\)) is the distribution of the remaining degree i.e. the edges leaving the node that do not 
-connect the pair, it is expressed in terms of the degree distribution $p_k$ as shown further above; \((\sigma_q\)) is the 
-distribution of \((q_k\)); \((e_{jk}\)) is the joint probability distribution of the remaining degrees of the two vertices _j_ 
+where \\(r\in[-1,1]\\); \\(q_k\\) is the distribution of the remaining degree i.e. the edges leaving the node that do not 
+connect the pair, it is expressed in terms of the degree distribution $p_k$ as shown further above; \\(\sigma_q\\) is the 
+distribution of \\(q_k\\); \\(e_{jk}\\) is the joint probability distribution of the remaining degrees of the two vertices _j_ 
 and _k_ i.e. the fraction of edges connecting nodes of degree _j_ and _k_.
 
 For our graph we get an assortativity coefficient 
