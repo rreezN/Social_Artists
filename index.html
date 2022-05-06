@@ -100,30 +100,19 @@
 Artists who speak together, perform together and create art together. They are social artists.</em></p><p>On this website, we wish to give you an insight into The Social Network of hip hop artists. This project has narrowed
 its focus on hip hop artists because they are very social in their work, doing a lot of collaborations and having
 relations with each other. As a result it is possible to demonstrate the strength of the tools in network science
-while giving the reader an indeep exposition of the complex and captivating lives of hip hop artists.</p><p>To accomdate the website we have created a <strong>Jupiter notebook</strong> which the technical reader might enjoy, as it contains
+while giving the reader an i deep exposition of the complex and captivating relationships of hip hop artists.</p><p>To accommodate the website we have created a <strong>Jupiter notebook</strong> which the technical reader might enjoy, as it contains
 all the relevant analysis, which has been made in Python. In there you can find all the technical details of how
-everything has been implemented and calculated.</p><h1 id=hip-hop-a-social-political-movement><strong>Hip Hop: a social-political movement</strong></h1><p>Hip-Hop is a music genre loved by many due to how it reflects upon some of the struggles, thoughts and situations that
-numerous young people are experiencing.</p><p>While most people know about the music and the lyrics, many people do not know much about the artists and social
-relationships. However, the artists and their relationships are as equally fascinating as their lyrics and music
-since they are the minds behind it. In this project, we analyse the musicians themselves using Wikipedia as a reference.
-Potentially, we could also reveal a bit of insight into the music industry. And the societal development provided
-by the people of the Hip-hop genre.</p><p>Motivate the study of the social network of hip hop artists.
-Hip Hop artists are very social in their work. Often the authors on the tracks are listed with many featuring artists
-and many songs are written in collaboration between multiple musicians. It is therefore interesting to model the
-social network between the hip-hoppers. We can use the tools of network analysis to examine the social relationship
-between hip-hoppers in terms of raw numbers. Then we can answer questions like: who are the most central people in
-hip-hop? Who has many co-authors on their songs, or who are the co-authors to many songs?
-Of equal interest is how the artists are described by the public via their Wikipedia pages. Even though the pages are
-inherently neutral by design, it is still relevant to study how the sentiment of some hip-hoppers relate. We can also
-get to know if there are certain words or topics that are more relevant for an artist than for the rest.
-For more introduction, our pitch video for this project is below:</p><p><div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden><iframe src=https://www.youtube.com/embed/412kVAbfoZg style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe></div>Explanation of the website
-This website is structured with 3 subpages for each of the following types of analysis
-• Data page
-• Network analysis page
-• Text analysis page
-Many of the plots on this website are created using the <code>plotly</code> library and are interactive.
-Most of the network analysis was conducted in &ldquo;<code>networkx</code> &ldquo;and the visualisation is done through the &ldquo;<code>netwulf</code> &ldquo;package. Community detection was carried out with the python <a href=https://github.com/taynaud/python-louvain>louvain package</a></p><p>The linked <a href>explainer jupyter notebook</a> (indsæt nbviewer link <a href=https://nbviewer.org/>https://nbviewer.org/</a> ) contains all the relevant analysis, which has been made in python. In there you can find all the technical details of how everything has been implemented and calculated.
-hej</p><h1 id=data><strong>Data</strong></h1><p>The data for this project was acquired by extracting information from the Wikipedia pages of a
+everything has been implemented and calculated.</p><h1 id=hip-hop-a-social-political-movement><strong>Hip Hop: a social-political movement</strong></h1><p>Hip-Hop is a music genre loved by many due to how it reflects upon some of the struggles, thoughts and circumstances that
+numerous young people are experiencing. Their ideas emerges from the state of the present and their art are fostering
+the future. With mere words and beats youth cultures are remolded, a generation&rsquo;s perspectives on sociopolitical matters
+are recalibrated and the civilisation, our collective community, takes another small evolutionary step. As hip hop has
+such a big influence on the youth, which is equated with The Future, one must recognise that hip hop is a subject of
+interest when studying social science.</p><p>That is why, we have chosen to investigate the relations between the artists of hip hop using Wikipedia as a reference.
+Wikipedia is an interesting platform because it here that the common folk expound what they creditable accomplishment
+the artists have made. We can use the tools of network analysis to examine the social relationship between hip-hoppers
+in terms of raw numbers. Then we can answer questions like: who are the most central people in hip-hop?
+We hope that this website will give you a bit of insight into the hip hop music industry and the sociacl relations that
+binds it all together.</p><p>The linked <a href>explainer jupyter notebook</a> (indsæt nbviewer link <a href=https://nbviewer.org/>https://nbviewer.org/</a> )</p><h1 id=data><strong>Data</strong></h1><p>The data for this project was acquired by extracting information from the Wikipedia pages of a
 <a href=https://en.wikipedia.org/wiki/List_of_hip_hop_musicians target=_blank>list of hip-hop musicians</a>.
 This was done by using the
 <a href=https://docs.python-requests.org/en/latest/ target=_blank>Wikipedia Python API library</a>
@@ -180,7 +169,8 @@ where L and N are the number of edges and nodes, respectively.</p><p>Based on th
 $$\langle C \rangle_{\text{hip-hop}} = 0.231$$
 $$\langle C \rangle_{\text{random}} = 0.00429$$
 Since the clustering coefficient for the hip-hop network is approximately 100x larger than the coefficient for the
-random network, we conclude that clusters are indeed present.</p><h1 id=text><strong>Text</strong></h1><p>The text used for the text analysis is the content of each wiki page. There are
+random network, we conclude that clusters are indeed present.</p><h1 id=text><strong>Text</strong></h1><p>Even though the pages of Wikipedia are inherently neutral by design, it is still relevant to study how the sentiment
+and wording of some hip-hoppers relate.</p><p>The text used for the text analysis is the content of each wiki page. There are
 between 239 and 110.250 words written about each artist, with the median being 4202
 words and the mean being 6944. The distribution of words is shown here:</p><table><thead><tr><th>x</th><th style=text-align:right>x</th><th>x</th></tr></thead><tbody><tr><td>Needs figure of distribution!</td><td style=text-align:right>x</td><td>x</td></tr></tbody></table><p>This is a reasonable amount of words that can be used to analyse how the hip hop
 artists differ from each other. In this investigation, we will use term
@@ -204,7 +194,7 @@ $$\text{IDF}(t,d)=\log \left(\frac{N}{|{ d\in D: t\in d}|}\right)$$
 Where it becomes apparent, the terms which will get the highest score are the terms where only a few documents contain
 that term, and the document has many instances of that term.</p><p>Thereby this statistic can find the words that make a document (Wikipedia page) unique, and that is exactly what we
 wish to figure out. We want to find the defining words for each of our hip hop artists; the words that are unique to
-them and, therefore likely informative about their lives.</p><p>Let us start by looking at the TF and TF-IDF scores for Drake.</p><table><thead><tr><th style=text-align:right></th><th style=text-align:left>Word</th><th style=text-align:right>TF score</th></tr></thead><tbody><tr><td style=text-align:right>0</td><td style=text-align:left>drake</td><td style=text-align:right>0.0424568</td></tr><tr><td style=text-align:right>1</td><td style=text-align:left>album</td><td style=text-align:right>0.012454</td></tr><tr><td style=text-align:right>2</td><td style=text-align:left>music</td><td style=text-align:right>0.0106142</td></tr><tr><td style=text-align:right>3</td><td style=text-align:left>also</td><td style=text-align:right>0.0106142</td></tr><tr><td style=text-align:right>4</td><td style=text-align:left>released</td><td style=text-align:right>0.0100481</td></tr></tbody></table><table><thead><tr><th style=text-align:right></th><th style=text-align:left>Word</th><th style=text-align:right>TF-IDF score</th></tr></thead><tbody><tr><td style=text-align:right>0</td><td style=text-align:left>drake</td><td style=text-align:right>0.0433637</td></tr><tr><td style=text-align:right>1</td><td style=text-align:left>toronto</td><td style=text-align:right>0.00681557</td></tr><tr><td style=text-align:right>2</td><td style=text-align:left>ovo</td><td style=text-align:right>0.00437314</td></tr><tr><td style=text-align:right>3</td><td style=text-align:left>graham</td><td style=text-align:right>0.00330544</td></tr><tr><td style=text-align:right>4</td><td style=text-align:left>hot</td><td style=text-align:right>0.00316553</td></tr></tbody></table><p>Unsurprisingly, Drake himself shows up as the top word in each case. However, the TF-score words are extremely
+them and, therefore likely informative about their lives.</p><p>Let us start by looking at the TF and TF-IDF scores for Drake.</p><table><tr><th>TF result</th><th>TF-IDF result</th></tr><tr><td><table><thead><tr><th style=text-align:right></th><th style=text-align:left>Word</th><th style=text-align:right>TF score</th></tr></thead><tbody><tr><td style=text-align:right>0</td><td style=text-align:left>drake</td><td style=text-align:right>0.0425</td></tr><tr><td style=text-align:right>1</td><td style=text-align:left>album</td><td style=text-align:right>0.0125</td></tr><tr><td style=text-align:right>2</td><td style=text-align:left>music</td><td style=text-align:right>0.0106</td></tr><tr><td style=text-align:right>3</td><td style=text-align:left>also</td><td style=text-align:right>0.0106</td></tr><tr><td style=text-align:right>4</td><td style=text-align:left>released</td><td style=text-align:right>0.0100</td></tr></tbody></table></td><td><table><thead><tr><th style=text-align:right></th><th style=text-align:left>Word</th><th style=text-align:right>TF-IDF score</th></tr></thead><tbody><tr><td style=text-align:right>0</td><td style=text-align:left>drake</td><td style=text-align:right>0.0434</td></tr><tr><td style=text-align:right>1</td><td style=text-align:left>toronto</td><td style=text-align:right>0.0068</td></tr><tr><td style=text-align:right>2</td><td style=text-align:left>ovo</td><td style=text-align:right>0.0044</td></tr><tr><td style=text-align:right>3</td><td style=text-align:left>graham</td><td style=text-align:right>0.0033</td></tr><tr><td style=text-align:right>4</td><td style=text-align:left>hot</td><td style=text-align:right>0.0032</td></tr></tbody></table></td></tr></table><p>Unsurprisingly, Drake himself shows up as the top word in each case. However, the TF-score words are extremely
 irrelevant since they are just generic music terms that provide absolutely no information on him as a person.
 In contrast, the TF-IDF words are highly relevant. For example, the OVO music label which Drake owns, is shown.</p><p>Without going in-depth with them, we believe it might also be interesting to look at these hip hop artists.</p><h3 id=insert-word-clouds>Insert Word Clouds</h3><h3 id=insert-word-clouds-1>Insert Word Clouds</h3><h2 id=sentiment-analysis><strong>Sentiment analysis</strong></h2><p>We wanted to do a sentiment analysis of the hip hop artists, but given that Wikipedia is notoriously neutral in their
 writing, the results of just doing it on all their content would be uninteresting. Instead, we thought it would be
