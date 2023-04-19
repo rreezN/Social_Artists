@@ -9,7 +9,7 @@ Most of the work for this repository has been performed in [another repository](
 
 [Explainer notebook in this repo](https://github.com/AndreasLH/Social_Artists/blob/main/Project_Assignment/explainer_notebook.ipynb) 
 
-[Website](https://AndreasLH.github.io/Social_Artists/)
+[Website](https://rreezN.github.io/Social_Artists/)
 
 [Data](Project_Assignment)
 
